@@ -1,0 +1,20 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  boot:
+    admin:
+#      url: http://localhost:8686
+
+eureka:
+  server:
+    deltaRetentionTimerIntervalInMs: 5000
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
